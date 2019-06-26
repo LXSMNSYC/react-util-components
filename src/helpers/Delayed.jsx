@@ -52,9 +52,7 @@ const Delayed = ({
     };
   }, [mounted, mountAfter, unmountAfter]);
 
-  const Placeholder = placeholder;
-
-  return show ? <>{children}</> : <Placeholder />;
+  return show ? <>{children}</> : placeholder;
 };
 
 Delayed.propTypes = {
@@ -74,7 +72,7 @@ Delayed.defaultProps = {
   mounted: true,
   mountAfter: 0,
   unmountAfter: 0,
-  placeholder: 'span',
+  placeholder: <span />,
 };
 
 export default Delayed;
